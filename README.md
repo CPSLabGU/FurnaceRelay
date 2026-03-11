@@ -12,6 +12,7 @@ structure within the `verification` folder.
 ├── README.md
 └── verification
     ├── graph.dot
+    ├── graph.jpeg
     ├── graph.png
     ├── graph.svg
     └── spec.tctl
