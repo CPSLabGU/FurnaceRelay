@@ -1,3 +1,5 @@
 // spec:language VHDL
 
-A G relayOn /= 'Z'
+A G relayOn = '1' and demand = "01" -> {A F relayOn = '0'}_{t <= 2 us}
+
+{A G relayOn = '0'}_{t <= 2 us}
