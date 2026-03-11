@@ -1,11 +1,16 @@
 // spec:language VHDL
 
+-- Ensure relay is off when demand is enough.
 A G relayOn = '1' and demand = "01" -> {A F relayOn = '0'}_{t <= 2 us}
 
+-- The relay is always off during the first 2 microseconds of the LLFSMs execution.
 {A G relayOn = '0'}_{t <= 2 us}
 
+-- The initial state is not reachable from any other state.
 A G currentState /= Initial -> A G currentState /= Initial
 
+-- The LLFSM always leaves the initial state after 1 microsecond.
 {A G currentState /= Initial}_{t > 1 us}
 
+-- The relay is turned on when there is a demand for heat.
 A G currentState /= Initial -> (A G demand = "10" and heat = '1' -> {A F relayOn = '1'}_{t <= 2 us})
