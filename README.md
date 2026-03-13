@@ -13,6 +13,7 @@ structure within the `verification` folder.
 └── verification
     ├── graph.dot
     ├── graph.jpeg
+    ├── graph.pdf
     ├── graph.png
     ├── graph.svg
     └── spec.tctl
